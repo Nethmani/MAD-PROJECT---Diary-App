@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#ed5f1e</color>
+    <color name="purple">#86469C</color>
+    <color name="light_purple">#FFE6E6</color>
+    <color name="text_purple">#9A208C</color>
+    <color name ="icon_purple">#3E001F</color>
+    <color name="light_white">#FFE6E6</color>
+
+</resources>
