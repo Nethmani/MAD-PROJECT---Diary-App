@@ -28,10 +28,10 @@ class NotesAdapter(private var notes: List<Note>, context: Context) : RecyclerVi
         return NoteViewHolder(view)
     }
 
-    override fun getItemCount(): Int = notes.size
+    override fun getItemCount(): Int = notes.size   // Return the number of items in the data set
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
-        val note = notes[position]
+        val note = notes[position] // Get the note at the current position
         holder.titleTextView.text = note.title
         holder.contentTextView.text=note.content
 
@@ -42,14 +42,14 @@ class NotesAdapter(private var notes: List<Note>, context: Context) : RecyclerVi
             holder.itemView.context.startActivity(intent)
         }
         holder.deleteButton.setOnClickListener {
-            db.deleteNote(note.id)
-            refreshData(db.getAllNotes())
+            db.deleteNote(note.id)   // Delete the note from the database
+            refreshData(db.getAllNotes())  // Refresh the data set in the RecyclerView
             Toast.makeText(holder.itemView.context, "Note Deleted", Toast.LENGTH_SHORT).show()
         }
     }
 
     fun refreshData(newNotes:List<Note>){
-        notes = newNotes
+        notes = newNotes // Update the notes list with the new data
         notifyDataSetChanged()
     }
 

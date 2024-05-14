@@ -17,9 +17,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize database helper
         db= NotesDatabaseHelper(this)
+
+        // Initialize notes adapter with data from the database
         notesAdapter= NotesAdapter(db.getAllNotes(), this)
 
+        // Set up RecyclerView
         binding.notesRecyclerView.layoutManager=LinearLayoutManager(this)
         binding.notesRecyclerView.adapter=notesAdapter
 
@@ -29,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onResume() {
+    override fun onResume() {  // Refresh the data in the adapter when the activity resumes
         super.onResume()
         notesAdapter.refreshData(db.getAllNotes())
     }

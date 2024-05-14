@@ -21,6 +21,23 @@ class AddNoteActivity : AppCompatActivity() {
         binding.saveButton.setOnClickListener {
             val title = binding.titleEditText.text.toString()
             val content = binding.contentEditText.text.toString()
+
+            // Validate input data
+            if (title.isEmpty() || content.isEmpty()) {
+                Toast.makeText(this, "Please enter both title and content", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (title.length > 25) { // Adjust the maximum length as needed
+                Toast.makeText(this, "Title is too long", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (content.length > 500) { // Adjust the maximum length as needed
+                Toast.makeText(this, "Content is too long", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val note = Note(0, title, content) // Do not pass id here
             db.insertNote(note)
             finish()

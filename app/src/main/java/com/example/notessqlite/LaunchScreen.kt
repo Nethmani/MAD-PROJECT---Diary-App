@@ -13,7 +13,7 @@ class LaunchScreen : AppCompatActivity() {
         var button = findViewById<Button>(R.id.button)
 
         button.setOnClickListener() {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this,loginActivity::class.java)
             startActivity(intent)
             finish()
         }

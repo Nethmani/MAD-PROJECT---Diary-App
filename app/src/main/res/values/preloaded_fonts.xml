@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alatsi</item>
         <item>@font/annie_use_your_telescope</item>
+        <item>@font/archivo_black</item>
         <item>@font/beth_ellen</item>
         <item>@font/black_and_white_picture</item>
         <item>@font/great_vibes</item>
